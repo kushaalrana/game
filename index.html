@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+    <style>
+        
+        h1{
+            padding: 32px
+        }
+        .cen{
+           display: flex;
+        }
+        td 
+        {    width: 100px;
+             height: 100px;
+            font-size: 3em;
+            text-align: center;
+            color: forestgreen;
+        }
+        .fullib{
+            border: 5px solid #A1296D;
+        }
+        .lrb{
+            border-left: 5px solid #A1296D;
+            border-right: 5px solid #A1296D;
+        }
+        .tbb{
+            border-top:  5px solid #A1296D;
+            border-bottom: 5px solid #A1296D;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1 class="text-primary text-center">TIC TAC TOE</h1><br>
+    
+      <div class="cen">
+    <table align="center">
+        <tr>
+            <td></td>
+            <td class="lrb"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="tbb"></td>
+            <td class="fullib"></td>
+            <td class="tbb"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="lrb"></td>
+            <td></td>
+        </tr>
+    </table>
+        </div>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    
+    <script>
+    var isX=true;
+        var arr=new Array(3);
+        arr[0]=new Array(3);
+        arr[1]=new Array(3);
+        arr[2]=new Array(3);
+        $("table td").click(function(){
+            var c= $(this).index();
+            var r= $(this).parent().index();
+            if(isX==true)
+                {
+                    $(this).text("X");
+                    arr[r][c]='x';
+                    isX=!isX;
+                }
+            else{
+                arr[r][c]='o'
+                $(this).text("o");
+                isX=!isX;
+            }
+            for(i=0;i<3;i++)
+                {
+                    var str="";
+                    for(j=0;j<3;j++)
+                        {
+                            str+=arr[i][j]+" ";
+                        }
+                    console.log(str);
+                }
+            for(i=0;i<3;i++)
+                {for(j=0;j<3;j++)
+                   if(a[i][j]==a[i][j+1]==a[i][j+2])
+                    console.log("GOOD");
+                
+                }
+        })
+    
+    </script>
+
+</body></html>
